@@ -1,8 +1,18 @@
-import Vue from 'vue'
-import App from './App.vue'
+require('./bootstrap');
 
-Vue.config.productionTip = false
+import Vue from 'vue';
+import CartComponent from './components/cart.vue'
+import App from './App.vue'
+Vue.component('cart', CartComponent)
+
+import router from './router';
+import store from './store';
+
+
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    el: '#app',
+	render: h => h(App),
+    router,
+    store
+});
